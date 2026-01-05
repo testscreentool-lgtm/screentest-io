@@ -1,3 +1,4 @@
+// app/layout.tsx
 import './globals.css'
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
@@ -9,8 +10,20 @@ export const metadata: Metadata = {
     default: 'ScreenTest.io - Professional Display Testing Tools | Free Online',
     template: '%s | ScreenTest.io',
   },
-  description: 'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. Black screen, white screen, dead pixel test, and 9 more professional testing tools. No download required.',
-  keywords: ['screen test', 'dead pixel test', 'monitor test', 'display testing', 'black screen', 'white screen', 'pixel fixer', 'monitor calibration', 'refresh rate test', 'response time test'],
+  description:
+    'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. Black screen, white screen, dead pixel test, and 9 more professional testing tools. No download required.',
+  keywords: [
+    'screen test',
+    'dead pixel test',
+    'monitor test',
+    'display testing',
+    'black screen',
+    'white screen',
+    'pixel fixer',
+    'monitor calibration',
+    'refresh rate test',
+    'response time test',
+  ],
   authors: [{ name: 'ScreenTest.io' }],
   creator: 'ScreenTest.io',
   publisher: 'ScreenTest.io',
@@ -24,7 +37,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://screentest.io',
     title: 'ScreenTest.io - Professional Display Testing Tools',
-    description: 'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. 12 professional testing tools available instantly.',
+    description:
+      'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. 12 professional testing tools available instantly.',
     siteName: 'ScreenTest.io',
     images: [
       {
@@ -38,7 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ScreenTest.io - Display Testing Tools',
-    description: 'Free online tools for professional display testing. Test dead pixels, calibrate monitors, and optimize screen quality.',
+    description:
+      'Free online tools for professional display testing. Test dead pixels, calibrate monitors, and optimize screen quality.',
     images: ['/og-image.png'],
     creator: '@screentest',
   },
@@ -54,9 +69,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: '<meta name="google-site-verification" content="NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g" />',
-    // yandex: 'YOUR_YANDEX_CODE',
-    // bing: 'YOUR_BING_CODE',
+    google: 'NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g', // ✅ Correct format
   },
 }
 
@@ -68,9 +81,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics - Add your GA4 tracking code */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> */}
-        {/* <script dangerouslySetInnerHTML={{
+        {/* Optional: Google Analytics */}
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -81,9 +94,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

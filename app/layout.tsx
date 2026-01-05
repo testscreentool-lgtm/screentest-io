@@ -1,27 +1,62 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
-  title: 'ScreenTest.io - Professional Display Testing Tools',
-  description: 'Free online tools to test dead pixels, calibrate monitors, and optimize your display quality. No download required. Works on all devices.',
-  keywords: 'screen test, dead pixel test, monitor test, black screen, white screen, display test, pixel test, screen calibration',
+  metadataBase: new URL('https://screentest.io'),
+  title: {
+    default: 'ScreenTest.io - Professional Display Testing Tools | Free Online',
+    template: '%s | ScreenTest.io',
+  },
+  description: 'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. Black screen, white screen, dead pixel test, and 9 more professional testing tools. No download required.',
+  keywords: ['screen test', 'dead pixel test', 'monitor test', 'display testing', 'black screen', 'white screen', 'pixel fixer', 'monitor calibration', 'refresh rate test', 'response time test'],
   authors: [{ name: 'ScreenTest.io' }],
+  creator: 'ScreenTest.io',
+  publisher: 'ScreenTest.io',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: 'ScreenTest.io - Professional Display Testing Tools',
-    description: 'Free online tools to test dead pixels, calibrate monitors, and optimize your display quality.',
-    url: 'https://screentest.io',
-    siteName: 'ScreenTest.io',
     type: 'website',
+    locale: 'en_US',
+    url: 'https://screentest.io',
+    title: 'ScreenTest.io - Professional Display Testing Tools',
+    description: 'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. 12 professional testing tools available instantly.',
+    siteName: 'ScreenTest.io',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'ScreenTest.io - Display Testing Tools',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ScreenTest.io - Professional Display Testing Tools',
-    description: 'Free online tools to test dead pixels, calibrate monitors, and optimize your display quality.',
+    title: 'ScreenTest.io - Display Testing Tools',
+    description: 'Free online tools for professional display testing. Test dead pixels, calibrate monitors, and optimize screen quality.',
+    images: ['/og-image.png'],
+    creator: '@screentest',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE_HERE',
+    // yandex: 'YOUR_YANDEX_CODE',
+    // bing: 'YOUR_BING_CODE',
   },
 }
 
@@ -32,9 +67,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        {/* Google Analytics - Add your GA4 tracking code */}
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> */}
+        {/* <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `
+        }} /> */}
+      </head>
+      <body className="min-h-screen flex flex-col">
         <Header />
-        <main className="min-h-screen">
+        <main className="flex-grow">
           {children}
         </main>
         <Footer />

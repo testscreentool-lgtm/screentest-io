@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+/* Fullscreen styles */
+.fullscreen-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+}
+
+.fullscreen-container.show-cursor {
+  cursor: default;
+}
+
+/* Smooth transitions */
+.tool-transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hide scrollbar in fullscreen */
+.fullscreen-container::-webkit-scrollbar {
+  display: none;
+}
+
+.fullscreen-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

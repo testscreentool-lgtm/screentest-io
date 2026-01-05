@@ -1,10 +1,9 @@
 // app/layout.tsx
 import './globals.css'
-import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: new URL('https://screentest.io'),
   title: {
     default: 'ScreenTest.io - Professional Display Testing Tools | Free Online',
@@ -68,9 +67,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g', // ✅ Correct format
-  },
 }
 
 export default function RootLayout({
@@ -81,6 +77,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Search Console verification */}
+        <meta
+          name="google-site-verification"
+          content="NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g"
+        />
         {/* Optional: Google Analytics */}
         {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
         <script dangerouslySetInnerHTML={{

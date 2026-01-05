@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: '<meta name="google-site-verification" content="NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g" />',
+    google: "NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g" />',
     // yandex: 'YOUR_YANDEX_CODE',
     // bing: 'YOUR_BING_CODE',
   },

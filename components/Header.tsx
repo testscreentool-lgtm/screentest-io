@@ -10,21 +10,39 @@ export default function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <div className="grid grid-cols-3 grid-rows-3 gap-0.5">
-                {[...Array(9)].map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-2 h-2 rounded-sm ${
-                      i === 4 ? 'bg-white' : 'bg-white/30'
-                    }`}
-                  />
-                ))}
+          {/* Logo - Modern Redesign */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            {/* Modern Icon */}
+            <div className="relative w-10 h-10">
+              {/* Gradient Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400 rounded-xl transform group-hover:scale-105 transition-transform duration-200"></div>
+              
+              {/* Screen Grid Pattern */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="grid grid-cols-3 grid-rows-3 gap-[3px]">
+                  {[...Array(9)].map((_, i) => (
+                    <div
+                      key={i}
+                      className={`w-[6px] h-[6px] rounded-[2px] transition-all duration-200 ${
+                        i === 4 
+                          ? 'bg-white shadow-sm' 
+                          : 'bg-white/40 group-hover:bg-white/60'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-            <span className="text-xl font-bold text-gray-900">ScreenTest.io</span>
+
+            {/* Modern Typography - No .io */}
+            <div className="flex flex-col leading-none">
+              <span className="text-[22px] font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent tracking-tight">
+                ScreenTest
+              </span>
+              <span className="text-[9px] font-medium text-blue-600 tracking-wider uppercase mt-0.5">
+                Display Tools
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

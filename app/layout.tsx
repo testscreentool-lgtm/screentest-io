@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: 'ScreenTest.io - Professional Display Testing Tools | Free Online',
     template: '%s | ScreenTest',
   },
-  description: 'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. Black screen, white screen, dead pixel test, and more. No download required.',
+  description: 'Free tools to test dead pixels, calibrate monitors, and optimize displays. Black screen, white screen, dead pixel test. No download required.',
   keywords: ['screen test', 'dead pixel test', 'monitor test', 'black screen', 'white screen', 'display test', 'pixel test', 'screen calibration', 'monitor calibration', 'display testing tools'],
   authors: [{ name: 'ScreenTest' }],
   creator: 'ScreenTest',
@@ -60,6 +60,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'YOUR_GOOGLE_VERIFICATION_CODE_HERE',
+  },
+  other: {
+    'X-Robots-Tag': 'index, follow',
   },
 }
 

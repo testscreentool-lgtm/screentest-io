@@ -22,7 +22,7 @@ export default function Footer() {
           </nav>
 
           {/* Copyright */}
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-gray-400">
             © {new Date().getFullYear()} ScreenTest.io - Professional Display Testing Tools
           </div>
         </div>

@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ScreenTest.io - Professional Display Testing Tools | Free Online',
-  description: 'Free online tools to test dead pixels, calibrate monitors, and optimize display quality. Black screen, white screen, dead pixel test, and more. No download required.',
+  description: 'Free tools to test dead pixels, calibrate monitors, and optimize displays. Black screen, white screen, dead pixel test. No download required.',
 }
 
 const tools = [
@@ -11,6 +11,7 @@ const tools = [
     name: 'Black Screen',
     href: '/black-screen',
     icon: '⬛',
+    iconAlt: 'Black square icon representing black screen test',
     description: 'Test dead pixels and clean your monitor with pure black display',
     gradient: 'from-gray-900 to-gray-800',
   },
@@ -18,6 +19,7 @@ const tools = [
     name: 'White Screen',
     href: '/white-screen',
     icon: '⬜',
+    iconAlt: 'White square icon representing white screen test',
     description: 'Brightness test and screen cleaning with pure white display',
     gradient: 'from-gray-100 to-gray-200',
     textColor: 'text-gray-900',
@@ -26,6 +28,7 @@ const tools = [
     name: 'Dead Pixel Test',
     href: '/dead-pixel-test',
     icon: '🔴',
+    iconAlt: 'Red circle icon representing dead pixel test',
     description: 'Detect stuck and dead pixels with color cycling test',
     gradient: 'from-red-500 to-red-600',
   },
@@ -33,6 +36,7 @@ const tools = [
     name: 'Color Test',
     href: '/color-test',
     icon: '🎨',
+    iconAlt: 'Color palette icon representing color test',
     description: 'RGB color accuracy and display calibration testing',
     gradient: 'from-green-500 to-green-600',
   },
@@ -40,6 +44,7 @@ const tools = [
     name: 'Monitor Test',
     href: '/monitor-test',
     icon: '🖥️',
+    iconAlt: 'Computer monitor icon representing monitor test',
     description: 'Comprehensive display testing suite for professionals',
     gradient: 'from-purple-500 to-purple-600',
   },
@@ -47,6 +52,7 @@ const tools = [
     name: 'Brightness Test',
     href: '/brightness-test',
     icon: '☀️',
+    iconAlt: 'Sun icon representing brightness test',
     description: 'Calibrate screen brightness and contrast levels',
     gradient: 'from-blue-500 to-blue-600',
   },
@@ -54,6 +60,7 @@ const tools = [
     name: 'Contrast Test',
     href: '/contrast-test',
     icon: '◐',
+    iconAlt: 'Half-filled circle icon representing contrast test',
     description: 'Test display contrast and grayscale accuracy',
     gradient: 'from-gray-700 to-gray-900',
   },
@@ -61,6 +68,7 @@ const tools = [
     name: 'Pixel Fixer',
     href: '/pixel-fixer',
     icon: '⚡',
+    iconAlt: 'Lightning bolt icon representing pixel fixer',
     description: 'Attempt to fix stuck pixels with rapid color flashing',
     gradient: 'from-yellow-500 to-orange-500',
   },
@@ -68,6 +76,7 @@ const tools = [
     name: 'Burn-in Prevention',
     href: '/burn-in-prevention',
     icon: '🛡️',
+    iconAlt: 'Shield icon representing burn-in prevention',
     description: 'Prevent OLED burn-in with screensaver patterns',
     gradient: 'from-indigo-500 to-indigo-600',
   },
@@ -75,6 +84,7 @@ const tools = [
     name: 'Refresh Rate Test',
     href: '/refresh-rate-test',
     icon: '🔄',
+    iconAlt: 'Refresh icon representing refresh rate test',
     description: 'Detect your monitor refresh rate and Hz',
     gradient: 'from-cyan-500 to-cyan-600',
   },
@@ -82,6 +92,7 @@ const tools = [
     name: 'Screen Resolution',
     href: '/screen-resolution',
     icon: '📐',
+    iconAlt: 'Ruler icon representing screen resolution tool',
     description: 'Detect your screen resolution and pixel density',
     gradient: 'from-pink-500 to-pink-600',
   },
@@ -89,6 +100,7 @@ const tools = [
     name: 'Response Time Test',
     href: '/response-time-test',
     icon: '⏱️',
+    iconAlt: 'Stopwatch icon representing response time test',
     description: 'Test display response time and ghosting',
     gradient: 'from-teal-500 to-teal-600',
   },
@@ -97,21 +109,25 @@ const tools = [
 const features = [
   {
     icon: '⚡',
+    iconAlt: 'Lightning bolt icon',
     title: 'Lightning Fast',
     description: 'Sub-1 second load times on all devices',
   },
   {
     icon: '📱',
+    iconAlt: 'Mobile phone icon',
     title: 'Mobile Optimized',
     description: 'Perfect experience on phones and tablets',
   },
   {
     icon: '🔒',
+    iconAlt: 'Lock icon',
     title: '100% Free',
     description: 'No signup, no download, no hidden fees',
   },
   {
     icon: '🎯',
+    iconAlt: 'Target icon',
     title: 'Professional',
     description: 'Used by designers and tech professionals',
   },
@@ -158,14 +174,18 @@ export default function Home() {
                 href={tool.href}
                 className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition hover:-translate-y-1 hover:border-blue-500"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${tool.gradient} rounded-xl flex items-center justify-center text-3xl mb-4 ${tool.textColor || ''}`}>
+                <div 
+                  className={`w-16 h-16 bg-gradient-to-br ${tool.gradient} rounded-xl flex items-center justify-center text-3xl mb-4 ${tool.textColor || ''}`}
+                  role="img"
+                  aria-label={tool.iconAlt}
+                >
                   {tool.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{tool.description}</p>
                 <div className="mt-4 flex items-center gap-4 text-xs text-gray-500">
-                  <span className="flex items-center gap-1">⚡ Instant</span>
-                  <span className="flex items-center gap-1">📱 Mobile</span>
+                  <span className="flex items-center gap-1" role="img" aria-label="Instant access">⚡ Instant</span>
+                  <span className="flex items-center gap-1" role="img" aria-label="Mobile friendly">📱 Mobile</span>
                 </div>
               </Link>
             ))}
@@ -180,7 +200,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4">
+                <div 
+                  className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                  role="img"
+                  aria-label={feature.iconAlt}
+                >
                   {feature.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>

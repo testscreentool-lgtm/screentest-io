@@ -1,14 +1,19 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Analytics from '@/components/Analytics'
 
 const poppins = Poppins({ 
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
 })
+
+// Your Google Analytics Measurement ID
+const GA_MEASUREMENT_ID = 'G-9WVWNB3SQP'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://screentest.io'),
@@ -132,20 +137,27 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://screentest.io" />
-
+        
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WVWNB3SQP"></script>
-        <script
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-9WVWNB3SQP');
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                page_path: window.location.pathname,
+              });
             `,
           }}
         />
-
+        
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
@@ -161,6 +173,7 @@ export default function RootLayout({
         />
       </head>
       <body className={poppins.className}>
+        <Analytics />
         <Header />
         <main className="min-h-screen">
           {children}

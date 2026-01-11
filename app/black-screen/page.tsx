@@ -1,10 +1,5 @@
-// COMPLETE BLACK SCREEN TOOL PAGE - READY TO UPLOAD
-// Location: /app/black-screen/page.tsx
-// Everything included - just copy and upload!
-
 'use client'
 
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -570,20 +565,4 @@ export default function BlackScreenPage() {
       </article>
     </>
   )
-}
-
-// Export metadata separately for Next.js 13+ App Router
-export const metadata = {
-  title: 'Black Screen Test: Find Dead Pixels in 60 Seconds | Free Tool',
-  description: 'Professional black screen test reveals dead pixels, backlight bleeding, and display defects in 30-60 seconds. Used by 10,000+ people monthly. Free, instant, works on all devices.',
-  keywords: ['black screen test', 'dead pixel test', 'screen test', 'monitor test', 'display test'],
-  openGraph: {
-    title: 'Black Screen Test - Find Display Defects in 60 Seconds',
-    description: 'Free professional black screen test. Find dead pixels and backlight bleeding instantly.',
-    url: 'https://screentest.io/black-screen',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://screentest.io/black-screen',
-  },
 }

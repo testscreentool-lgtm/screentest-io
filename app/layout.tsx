@@ -4,8 +4,6 @@ import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Analytics from '@/components/Analytics'
-
 const poppins = Poppins({ 
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
@@ -173,7 +171,6 @@ export default function RootLayout({
         />
       </head>
       <body className={poppins.className}>
-        <Analytics />
         <Header />
         <main className="min-h-screen">
           {children}

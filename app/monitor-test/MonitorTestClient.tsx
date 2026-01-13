@@ -491,6 +491,5 @@ function TestInstructions({ title, description, onNext, onExit, dark = false }: 
       </div>
       <p className={`text-sm ${textColor} mt-2 opacity-75`}>Press ESC to exit anytime</p>
     </div>
-    </>
   )
 }

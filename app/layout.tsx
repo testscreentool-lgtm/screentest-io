@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 // Primary font: Poppins for headings and important text
 const poppins = Poppins({
@@ -42,7 +44,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className={inter.className}>
-        {children}
+        <Header />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )

@@ -16,7 +16,7 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
   const textSize = sizes[size].text
 
   return (
-    <Link href="/" className={`flex items-center gap-3 group ${className}`}>
+    <Link href="/" className={`flex items-center gap-2 group ${className}`}>
       {/* Monitor Icon */}
       <div className="relative flex-shrink-0">
         <svg width={iconSize} height={iconSize} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,15 +50,15 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
         </svg>
       </div>
 
-      {/* Text Logo */}
-      <div className={`flex items-baseline ${textSize}`}>
+      {/* Text Logo - Single line with no gaps */}
+      <div className={`flex items-baseline ${textSize} -tracking-tight`}>
         <span className="font-poppins font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
           Screen
         </span>
         <span className="font-poppins font-semibold text-indigo-600 group-hover:text-indigo-700 transition-colors">
           Test
         </span>
-        <span className="font-inter font-normal text-gray-500 text-base group-hover:text-gray-600 transition-colors">
+        <span className="font-inter font-normal text-gray-500 group-hover:text-gray-600 transition-colors" style={{ fontSize: '0.85em' }}>
           .io
         </span>
       </div>

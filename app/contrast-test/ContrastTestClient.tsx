@@ -112,6 +112,7 @@ export default function ContrastTestClient() {
   }
 
   return (
+    <>
       {/* Schema Markup */}
       <script
         type="application/ld+json"
@@ -402,5 +403,6 @@ export default function ContrastTestClient() {
         </section>
 
       </article>
+    </>
   )
 }

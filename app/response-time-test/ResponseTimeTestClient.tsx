@@ -32,7 +32,7 @@ export default function ResponseTimeTestClient() {
         
         // Update position
         positionRef.current += speeds[speed]
-        if (positionRef.current → canvas.width + 100) {
+        if (positionRef.current > canvas.width + 100) {
           positionRef.current = -100
         }
 

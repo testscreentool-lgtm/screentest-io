@@ -56,7 +56,7 @@ export default function RefreshRateTestClient() {
       setTestDuration(Math.floor(elapsed))
 
       // Calculate average frame time
-      if (frameTimesRef.current.length → 10) {
+      if (frameTimesRef.current.length > 10) {
         const avgFrameTime = frameTimesRef.current.reduce((a, b) => a + b, 0) / frameTimesRef.current.length
         const calculatedFps = 1000 / avgFrameTime
         const roundedHz = Math.round(calculatedFps)
@@ -231,7 +231,7 @@ export default function RefreshRateTestClient() {
                 )}
               </div>
 
-              {refreshRate === 60 && isTesting && testDuration → 5 && (
+              {refreshRate === 60 && isTesting && testDuration > 5 && (
                 <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-500 p-4">
                   <p className="text-gray-800 font-semibold mb-2">
                     ⚠️ Stuck at 60Hz? See troubleshooting guide below

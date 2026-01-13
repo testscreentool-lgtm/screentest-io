@@ -98,6 +98,7 @@ export default function ResponseTimeTestClient() {
   }
 
   return (
+    <>
       {/* Schema Markup */}
       <script
         type="application/ld+json"
@@ -441,5 +442,6 @@ export default function ResponseTimeTestClient() {
         </section>
 
       </article>
+    </>
   )
 }

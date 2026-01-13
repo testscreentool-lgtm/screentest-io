@@ -2,20 +2,25 @@ import { Metadata } from 'next'
 import BrightnessTestClient from './BrightnessTestClient'
 
 export const metadata: Metadata = {
-  title: 'Brightness Test: Calibrate Screen Brightness & Uniformity | Free Tool',
-  description: 'Test brightness uniformity and calibrate display levels for optimal viewing. Detect backlight variations and reduce eye strain with proper brightness settings.',
-  keywords: ['brightness test', 'screen calibration', 'brightness uniformity', 'monitor brightness', 'display calibration', 'eye strain reduction'],
-  authors: [{ name: 'ScreenTest' }],
-  alternates: { canonical: 'https://screentest.io/brightness-test' },
-  robots: { index: true, follow: true },
+  title: 'Brightness Test: Monitor Nit Measurement & HDR Guide 2025 | ScreenTest',
+  description: 'Free monitor brightness test. Understand nit levels, HDR certifications (400/600/1000), uniformity testing. Optimize brightness for gaming and work.',
+  keywords: 'brightness test, monitor nits, HDR test, DisplayHDR 400 600 1000, brightness uniformity, nit measurement, HDR gaming, eye strain, monitor calibration',
   openGraph: {
-    title: 'Brightness Test: Calibrate Screen Brightness | ScreenTest',
-    description: 'Free brightness test for optimal viewing and eye comfort. Professional calibration tool.',
+    title: 'Brightness Test: Monitor Nit Measurement & HDR Guide',
+    description: 'Test monitor brightness levels, check uniformity, understand HDR certifications. Learn optimal nit levels for gaming and office work.',
     type: 'website',
     url: 'https://screentest.io/brightness-test',
-  }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Brightness Test: Monitor Nit Measurement & HDR Guide',
+    description: 'Test brightness levels, HDR capabilities, and uniformity. Understand DisplayHDR 400/600/1000 certifications.',
+  },
+  alternates: {
+    canonical: 'https://screentest.io/brightness-test',
+  },
 }
 
-export default function Page() {
+export default function BrightnessTestPage() {
   return <BrightnessTestClient />
 }

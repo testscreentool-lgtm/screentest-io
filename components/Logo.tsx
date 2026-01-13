@@ -50,7 +50,7 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
         </svg>
       </div>
 
-      {/* Text Logo - Single line with no gaps */}
+      {/* Text Logo - Fixed spacing */}
       <div className={`flex items-baseline ${textSize} -tracking-tight`}>
         <span className="font-poppins font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
           Screen
@@ -58,7 +58,7 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
         <span className="font-poppins font-semibold text-indigo-600 group-hover:text-indigo-700 transition-colors">
           Test
         </span>
-        <span className="font-inter font-normal text-gray-500 group-hover:text-gray-600 transition-colors" style={{ fontSize: '0.85em' }}>
+        <span className="font-inter font-normal text-gray-500 text-base group-hover:text-gray-600 transition-colors">
           .io
         </span>
       </div>

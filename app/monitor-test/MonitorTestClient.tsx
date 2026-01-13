@@ -455,6 +455,7 @@ export default function MonitorTestClient() {
         </section>
 
       </article>
+    </>
   )
 }
 

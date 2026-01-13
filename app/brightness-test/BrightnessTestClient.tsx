@@ -279,6 +279,5 @@ export default function BrightnessTestClient() {
         </section>
 
       </article>
-    </>
   )
 }

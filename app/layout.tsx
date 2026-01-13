@@ -1,28 +1,37 @@
-// File: /app/layout.tsx
-// Root layout with navigation menu
-
 import type { Metadata } from 'next'
+import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
-import ToolsMenu from '@/components/ToolsMenu'
-import Footer from '@/components/Footer'
-import Analytics from '@/components/Analytics'
+
+// Primary font: Poppins for headings and important text
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
+
+// Secondary font: Inter for body text and descriptions
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: {
-    default: 'ScreenTest - Free Professional Display Testing Tools',
-    template: '%s | ScreenTest'
+  title: 'ScreenTest.io - Professional Display Testing Tools',
+  description: 'Free professional display testing tools. Test for dead pixels, color accuracy, refresh rate, brightness, and more.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
-  description: 'Professional display testing suite with 11 free tools. Test for dead pixels, backlight bleeding, color accuracy, and more. Used by 10,000+ monthly.',
-  keywords: ['screen test', 'dead pixel test', 'monitor test', 'display test', 'pixel checker'],
-  authors: [{ name: 'ScreenTest' }],
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://screentest.io',
-    siteName: 'ScreenTest',
-    title: 'ScreenTest - Free Professional Display Testing Tools',
-    description: 'Professional display testing suite with 11 free tools. Test for dead pixels, backlight bleeding, and more.',
-  },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({
@@ -31,12 +40,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-gray-50">
-        <ToolsMenu />
-        <main>{children}</main>
-        <Footer />
-        <Analytics />
+    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
+      <body className={inter.className}>
+        {children}
       </body>
     </html>
   )

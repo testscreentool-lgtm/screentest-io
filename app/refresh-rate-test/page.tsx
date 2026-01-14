@@ -22,8 +22,7 @@ export const metadata: Metadata = {
   },
 }
 
-const schemaData = 
-{
+const schemaData = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -76,4 +75,18 @@ const schemaData =
       }
     }
   ]
+}
+
+// ADD THIS - DEFAULT EXPORT:
+export default function RefreshRateTestPage() {
+  return (
+    <>
+      <Script
+        id="refresh-rate-test-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <RefreshRateTestClient />
+    </>
+  )
 }

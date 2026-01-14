@@ -1,5 +1,5 @@
 // File: /components/ToolsMenu.tsx
-// Navigation menu with Display Tools + Guides dropdowns
+// Navigation menu with Display Tools + Guides dropdowns (12 tools)
 
 'use client'
 
@@ -18,6 +18,7 @@ const tools = [
   { name: 'Magenta Screen', href: '/magenta-screen', icon: '🟪' },
   { name: 'Gray Screen', href: '/gray-screen', icon: '⬜' },
   { name: 'Pixel Fixer', href: '/pixel-fixer', icon: '🔧' },
+  { name: 'Color Test', href: '/color-test', icon: '🎨' },
 ]
 
 const guides = [

@@ -1,5 +1,5 @@
 // File: /components/ToolsMenu.tsx
-// Navigation menu with Display Tools + Guides dropdowns (12 tools)
+// Navigation menu with all 12 display testing tools
 
 'use client'
 
@@ -10,15 +10,15 @@ const tools = [
   { name: 'Black Screen', href: '/black-screen', icon: '⬛' },
   { name: 'White Screen', href: '/white-screen', icon: '⬜' },
   { name: 'Dead Pixel Test', href: '/dead-pixel-test', icon: '🔍' },
-  { name: 'Red Screen', href: '/red-screen', icon: '🟥' },
-  { name: 'Green Screen', href: '/green-screen', icon: '🟩' },
-  { name: 'Blue Screen', href: '/blue-screen', icon: '🟦' },
-  { name: 'Yellow Screen', href: '/yellow-screen', icon: '🟨' },
-  { name: 'Cyan Screen', href: '/cyan-screen', icon: '🟦' },
-  { name: 'Magenta Screen', href: '/magenta-screen', icon: '🟪' },
-  { name: 'Gray Screen', href: '/gray-screen', icon: '⬜' },
   { name: 'Pixel Fixer', href: '/pixel-fixer', icon: '🔧' },
   { name: 'Color Test', href: '/color-test', icon: '🎨' },
+  { name: 'Brightness Test', href: '/brightness-test', icon: '☀️' },
+  { name: 'Contrast Test', href: '/contrast-test', icon: '◐' },
+  { name: 'Monitor Test', href: '/monitor-test', icon: '🖥️' },
+  { name: 'Burn-in Prevention', href: '/burn-in-prevention', icon: '🛡️' },
+  { name: 'Refresh Rate Test', href: '/refresh-rate-test', icon: '⚡' },
+  { name: 'Response Time Test', href: '/response-time-test', icon: '⏱️' },
+  { name: 'Screen Resolution', href: '/screen-resolution', icon: '📐' },
 ]
 
 const guides = [

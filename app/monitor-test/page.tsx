@@ -76,3 +76,17 @@ const schemaData = {
     }
   ]
 }
+
+// ADD THIS - DEFAULT EXPORT:
+export default function MonitorTestPage() {
+  return (
+    <>
+      <Script
+        id="monitor-test-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <MonitorTestClient />
+    </>
+  )
+}

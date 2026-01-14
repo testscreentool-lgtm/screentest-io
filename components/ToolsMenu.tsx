@@ -1,5 +1,5 @@
 // File: /components/ToolsMenu.tsx
-// Navigation menu with favicon logo design
+// Navigation menu with Display Tools + Guides dropdowns
 
 'use client'
 
@@ -7,17 +7,25 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const tools = [
-  { name: 'Black Screen', href: '/black-screen', icon: '⬛', color: 'bg-gray-900' },
-  { name: 'White Screen', href: '/white-screen', icon: '⬜', color: 'bg-gray-100' },
-  { name: 'Dead Pixel Test', href: '/dead-pixel-test', icon: '🔍', color: 'bg-gradient-to-r from-black to-white' },
-  { name: 'Red Screen', href: '/red-screen', icon: '🟥', color: 'bg-red-600' },
-  { name: 'Green Screen', href: '/green-screen', icon: '🟩', color: 'bg-green-600' },
-  { name: 'Blue Screen', href: '/blue-screen', icon: '🟦', color: 'bg-blue-600' },
-  { name: 'Yellow Screen', href: '/yellow-screen', icon: '🟨', color: 'bg-yellow-400' },
-  { name: 'Cyan Screen', href: '/cyan-screen', icon: '🟦', color: 'bg-cyan-400' },
-  { name: 'Magenta Screen', href: '/magenta-screen', icon: '🟪', color: 'bg-fuchsia-600' },
-  { name: 'Gray Screen', href: '/gray-screen', icon: '⬜', color: 'bg-gray-500' },
-  { name: 'Pixel Fixer', href: '/pixel-fixer', icon: '🔧', color: 'bg-gradient-to-r from-red-500 to-blue-500' },
+  { name: 'Black Screen', href: '/black-screen', icon: '⬛' },
+  { name: 'White Screen', href: '/white-screen', icon: '⬜' },
+  { name: 'Dead Pixel Test', href: '/dead-pixel-test', icon: '🔍' },
+  { name: 'Red Screen', href: '/red-screen', icon: '🟥' },
+  { name: 'Green Screen', href: '/green-screen', icon: '🟩' },
+  { name: 'Blue Screen', href: '/blue-screen', icon: '🟦' },
+  { name: 'Yellow Screen', href: '/yellow-screen', icon: '🟨' },
+  { name: 'Cyan Screen', href: '/cyan-screen', icon: '🟦' },
+  { name: 'Magenta Screen', href: '/magenta-screen', icon: '🟪' },
+  { name: 'Gray Screen', href: '/gray-screen', icon: '⬜' },
+  { name: 'Pixel Fixer', href: '/pixel-fixer', icon: '🔧' },
+]
+
+const guides = [
+  { name: 'Display Buying Guide', href: '/guides/display-buying-guide', icon: '🛒' },
+  { name: 'Dead Pixel Guide', href: '/guides/dead-pixel-guide', icon: '📖' },
+  { name: 'Monitor Calibration', href: '/guides/monitor-calibration', icon: '⚙️' },
+  { name: 'Gaming Monitor Guide', href: '/guides/gaming-monitor-guide', icon: '🎮' },
+  { name: 'All Guides', href: '/guides', icon: '📚' },
 ]
 
 export default function ToolsMenu() {
@@ -29,7 +37,6 @@ export default function ToolsMenu() {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Using Favicon Design */}
           <Link href="/" className="flex items-center gap-3 group">
-            {/* Favicon Logo SVG */}
             <div className="relative w-10 h-10">
               <svg viewBox="0 0 32 32" className="w-full h-full">
                 <defs>
@@ -38,31 +45,20 @@ export default function ToolsMenu() {
                     <stop offset="100%" style={{ stopColor: '#06b6d4', stopOpacity: 1 }} />
                   </linearGradient>
                 </defs>
-                
-                {/* Background rounded square */}
                 <rect width="32" height="32" rx="6" fill="url(#logo-grad)" className="group-hover:opacity-90 transition-opacity"/>
-                
-                {/* Screen grid pattern (3x3) */}
                 <g transform="translate(8, 8)">
-                  {/* Row 1 */}
                   <rect x="0" y="0" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
                   <rect x="6" y="0" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
                   <rect x="12" y="0" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
-                  
-                  {/* Row 2 - Center pixel highlighted */}
                   <rect x="0" y="6" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
                   <rect x="6" y="6" width="4" height="4" rx="1" fill="#ffffff"/>
                   <rect x="12" y="6" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
-                  
-                  {/* Row 3 */}
                   <rect x="0" y="12" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
                   <rect x="6" y="12" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
                   <rect x="12" y="12" width="4" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
                 </g>
               </svg>
             </div>
-            
-            {/* Brand Name */}
             <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
               ScreenTest
             </span>
@@ -70,7 +66,7 @@ export default function ToolsMenu() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
-            {/* Home Button */}
+            {/* Home */}
             <Link href="/" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Home
             </Link>
@@ -84,7 +80,6 @@ export default function ToolsMenu() {
                 </svg>
               </button>
 
-              {/* Dropdown */}
               <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="p-2">
                   {tools.map((tool) => (
@@ -103,9 +98,39 @@ export default function ToolsMenu() {
               </div>
             </div>
 
+            {/* Guides Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                Guides
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-2">
+                  {guides.map((guide) => (
+                    <Link
+                      key={guide.href}
+                      href={guide.href}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 transition group/item"
+                    >
+                      <span className="text-2xl">{guide.icon}</span>
+                      <span className="text-gray-700 group-hover/item:text-gray-900 font-medium">
+                        {guide.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* About */}
             <Link href="/about" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               About
             </Link>
+
+            {/* Contact */}
             <Link href="/contact" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Contact
             </Link>
@@ -140,7 +165,6 @@ export default function ToolsMenu() {
               </Link>
               
               <div className="px-4 py-2 text-sm font-semibold text-gray-500">Display Tools</div>
-              
               {tools.map((tool) => (
                 <Link
                   key={tool.href}
@@ -150,6 +174,19 @@ export default function ToolsMenu() {
                 >
                   <span className="text-xl">{tool.icon}</span>
                   <span className="text-gray-700 font-medium">{tool.name}</span>
+                </Link>
+              ))}
+              
+              <div className="px-4 py-2 text-sm font-semibold text-gray-500 mt-4">Guides</div>
+              {guides.map((guide) => (
+                <Link
+                  key={guide.href}
+                  href={guide.href}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-xl">{guide.icon}</span>
+                  <span className="text-gray-700 font-medium">{guide.name}</span>
                 </Link>
               ))}
               

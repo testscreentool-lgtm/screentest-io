@@ -1,15 +1,15 @@
 // File: /components/Footer.tsx
-// Modern, colorful footer with gradients and visual appeal
+// Modern footer with correct 12 tools and social media
 
 import Link from 'next/link'
 
 export default function Footer() {
   const tools = [
     { name: 'Black Screen', href: '/black-screen', icon: '⬛', color: 'from-gray-900 to-gray-700' },
-    { name: 'White Screen', href: '/white-screen', icon: '⬜', color: 'from-gray-100 to-gray-300' },
     { name: 'Dead Pixel Test', href: '/dead-pixel-test', icon: '🔍', color: 'from-purple-600 to-indigo-600' },
-    { name: 'Color Test', href: '/color-test', icon: '🎨', color: 'from-pink-500 to-purple-600' },
     { name: 'Pixel Fixer', href: '/pixel-fixer', icon: '🔧', color: 'from-orange-500 to-red-500' },
+    { name: 'Color Test', href: '/color-test', icon: '🎨', color: 'from-pink-500 to-purple-600' },
+    { name: 'Brightness Test', href: '/brightness-test', icon: '☀️', color: 'from-yellow-400 to-orange-400' },
   ]
 
   const guides = [
@@ -28,7 +28,7 @@ export default function Footer() {
       
       <div className="relative max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand Column - Keep as is */}
+          {/* Brand Column */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10">
@@ -113,7 +113,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Testing Tools Column - REDESIGNED */}
+          {/* Testing Tools Column */}
           <div>
             <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               🚀 Popular Tools
@@ -140,7 +140,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Guides Column - REDESIGNED */}
+          {/* Guides Column */}
           <div>
             <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               📚 Learn & Explore
@@ -171,6 +171,9 @@ export default function Footer() {
                 </Link>
                 <Link href="/privacy" className="block font-medium text-gray-400 hover:text-white transition-colors">
                   → Privacy
+                </Link>
+                <Link href="/terms" className="block font-medium text-gray-400 hover:text-white transition-colors">
+                  → Terms
                 </Link>
               </div>
             </ul>

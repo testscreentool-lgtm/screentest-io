@@ -1,3 +1,11 @@
+export const metadata = {
+  title: "Contact ScreenTest.io – Support & Feedback",
+  description: "Get in touch with ScreenTest.io for feedback, questions, or support regarding our free display testing tools.",
+  alternates: {
+    canonical: "https://screentest.io/contact",
+  },
+};
+
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50">

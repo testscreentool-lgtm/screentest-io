@@ -1,5 +1,11 @@
 import Link from 'next/link'
-
+export const metadata = {
+  title: "About ScreenTest.io – Free Monitor & Display Testing Tools",
+  description: "Learn about ScreenTest.io. Free professional-grade monitor and display testing tools for gamers, designers, and everyday users.",
+  alternates: {
+    canonical: "https://screentest.io/about",
+  },
+};
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">

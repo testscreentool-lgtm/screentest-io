@@ -27,8 +27,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://screentest.io'),
   title: {
     default: 'ScreenTest - Free Professional Display Testing Tools',
-    template: '%s | ScreenTest'
+    template: '%s'
   },
+  description: 'Free professional display testing tools for monitors, phones, and TVs.',
+};
   description: 'Professional display testing suite with 11 free tools. Test for dead pixels, backlight bleeding, color accuracy, and more. Used by 10,000+ monthly.',
   keywords: ['screen test', 'dead pixel test', 'monitor test', 'display test', 'pixel checker', 'black screen test', 'white screen test', 'screen calibration', 'monitor calibration', 'display testing tools'],
   authors: [{ name: 'ScreenTest' }],

@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ScreenTest - Free Professional Display Testing Tools',
-  description: 'Complete suite of 11 free display testing tools. Test for dead pixels, backlight bleeding, color accuracy, brightness uniformity, and more. Instant testing, no signup required.',
+  description: 'Complete suite of 12 free display testing tools. Test for dead pixels, backlight bleeding, color accuracy, brightness uniformity, and more. Instant testing, no signup required.',
 }
 
 export default function HomePage() {
@@ -93,6 +93,13 @@ export default function HomePage() {
       description: 'Check grayscale accuracy and brightness uniformity.',
       icon: '⬜',
       color: 'from-gray-500 to-gray-600'
+    },
+    {
+      name: 'Color Test',
+      href: '/color-test',
+      description: 'Comprehensive RGB color accuracy and gradient testing.',
+      icon: '🎨',
+      color: 'from-pink-500 via-purple-500 to-indigo-500'
     }
   ]
 
@@ -105,7 +112,7 @@ export default function HomePage() {
             Professional Display Testing Tools
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-blue-100">
-            Complete suite of 11 free tools to test monitors, laptops, phones, and TVs
+            Complete suite of 12 free tools to test monitors, laptops, phones, and TVs
           </p>
           <div className="flex items-center justify-center gap-8 text-lg">
             <span className="flex items-center gap-2">
@@ -135,7 +142,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">11</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">12</div>
               <div className="text-gray-600">Professional Tools</div>
             </div>
             <div>

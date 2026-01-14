@@ -1,12 +1,11 @@
 // File: /app/layout.tsx
-// Root layout with SEO, schema markup, and Poppins + Inter fonts
+// Root layout with navigation menu, SEO, and Poppins + Inter fonts
 
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
 import ToolsMenu from '@/components/ToolsMenu'
 import Footer from '@/components/Footer'
-import Analytics from '@/components/Analytics'
 
 // Primary font: Poppins for headings and important text
 const poppins = Poppins({
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | ScreenTest'
   },
   description: 'Professional display testing suite with 11 free tools. Test for dead pixels, backlight bleeding, color accuracy, and more. Used by 10,000+ monthly.',
-  keywords: ['screen test', 'dead pixel test', 'monitor test', 'display test', 'pixel checker', 'black screen', 'white screen', 'color test', 'brightness test', 'screen calibration'],
+  keywords: ['screen test', 'dead pixel test', 'monitor test', 'display test', 'pixel checker', 'black screen test', 'white screen test', 'screen calibration', 'monitor calibration', 'display testing tools'],
   authors: [{ name: 'ScreenTest' }],
   creator: 'ScreenTest',
   publisher: 'ScreenTest',
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
     url: 'https://screentest.io',
     siteName: 'ScreenTest',
     title: 'ScreenTest - Free Professional Display Testing Tools',
-    description: 'Professional display testing suite with 11 free tools. Test for dead pixels, backlight bleeding, and more.',
+    description: 'Professional display testing suite with 11 free tools. Test for dead pixels, backlight bleeding, and more. Used by 10,000+ users monthly.',
     images: [
       {
         url: '/og-image.png',
@@ -70,16 +69,7 @@ export const metadata: Metadata = {
     title: 'ScreenTest - Display Testing Tools',
     description: 'Free online tools for professional display testing. Test dead pixels, calibrate monitors, and optimize screen quality.',
     images: ['/og-image.png'],
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    creator: '@screentest',
   },
 }
 
@@ -111,6 +101,11 @@ const websiteSchema = {
       url: 'https://screentest.io/favicon.svg',
     },
   },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://screentest.io/?s={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
 }
 
 const softwareApplicationSchema = {
@@ -140,6 +135,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
@@ -154,11 +153,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
         />
       </head>
-      <body className={`${inter.className} min-h-screen bg-gray-50`}>
+      <body className={`min-h-screen bg-gray-50 ${inter.className}`}>
         <ToolsMenu />
         <main>{children}</main>
         <Footer />
-        <Analytics />
       </body>
     </html>
   )

@@ -1,5 +1,5 @@
 // File: /app/page.tsx
-// Homepage showcasing all display testing tools
+// Homepage showcasing all 12 display testing tools
 
 import Link from 'next/link'
 import { Metadata } from 'next'
@@ -36,27 +36,6 @@ export default function HomePage() {
       popular: true
     },
     {
-      name: 'Red Screen Test',
-      href: '/red-screen',
-      description: 'Test red subpixel failures and stuck pixels.',
-      icon: '🟥',
-      color: 'from-red-600 to-red-700'
-    },
-    {
-      name: 'Green Screen Test',
-      href: '/green-screen',
-      description: 'Detect green subpixel failures and color accuracy issues.',
-      icon: '🟩',
-      color: 'from-green-600 to-green-700'
-    },
-    {
-      name: 'Blue Screen Test',
-      href: '/blue-screen',
-      description: 'Find blue subpixel failures and HDR display issues.',
-      icon: '🟦',
-      color: 'from-blue-600 to-blue-700'
-    },
-    {
       name: 'Pixel Fixer',
       href: '/pixel-fixer',
       description: 'Attempt to fix stuck pixels with rapid color flashing (20-60% success).',
@@ -65,41 +44,61 @@ export default function HomePage() {
       popular: true
     },
     {
-      name: 'Yellow Screen Test',
-      href: '/yellow-screen',
-      description: 'Test yellow display and secondary color accuracy.',
-      icon: '🟨',
-      color: 'from-yellow-400 to-yellow-500',
-      textDark: true
-    },
-    {
-      name: 'Cyan Screen Test',
-      href: '/cyan-screen',
-      description: 'Verify cyan color accuracy and complementary colors.',
-      icon: '🟦',
-      color: 'from-cyan-400 to-cyan-500',
-      textDark: true
-    },
-    {
-      name: 'Magenta Screen Test',
-      href: '/magenta-screen',
-      description: 'Test magenta color accuracy and display uniformity.',
-      icon: '🟪',
-      color: 'from-fuchsia-600 to-fuchsia-700'
-    },
-    {
-      name: 'Gray Screen Test',
-      href: '/gray-screen',
-      description: 'Check grayscale accuracy and brightness uniformity.',
-      icon: '⬜',
-      color: 'from-gray-500 to-gray-600'
-    },
-    {
       name: 'Color Test',
       href: '/color-test',
       description: 'Comprehensive RGB color accuracy and gradient testing.',
       icon: '🎨',
       color: 'from-pink-500 via-purple-500 to-indigo-500'
+    },
+    {
+      name: 'Brightness Test',
+      href: '/brightness-test',
+      description: 'Test brightness uniformity and backlight consistency across screen.',
+      icon: '☀️',
+      color: 'from-yellow-400 to-orange-400',
+      textDark: true
+    },
+    {
+      name: 'Contrast Test',
+      href: '/contrast-test',
+      description: 'Evaluate contrast ratio and black level performance.',
+      icon: '◐',
+      color: 'from-gray-800 to-gray-900'
+    },
+    {
+      name: 'Monitor Test',
+      href: '/monitor-test',
+      description: 'Complete monitor diagnostics with multiple test patterns.',
+      icon: '🖥️',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      name: 'Burn-in Prevention',
+      href: '/burn-in-prevention',
+      description: 'Prevent OLED burn-in with pixel shifting and screen cycling.',
+      icon: '🛡️',
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      name: 'Refresh Rate Test',
+      href: '/refresh-rate-test',
+      description: 'Test actual refresh rate and motion smoothness.',
+      icon: '⚡',
+      color: 'from-violet-500 to-purple-600'
+    },
+    {
+      name: 'Response Time Test',
+      href: '/response-time-test',
+      description: 'Measure pixel response time and ghosting performance.',
+      icon: '⏱️',
+      color: 'from-red-500 to-rose-600'
+    },
+    {
+      name: 'Screen Resolution',
+      href: '/screen-resolution',
+      description: 'Detect your screen resolution and pixel density (PPI).',
+      icon: '📐',
+      color: 'from-teal-500 to-cyan-600'
     }
   ]
 
@@ -184,7 +183,7 @@ export default function HomePage() {
                   </div>
                 )}
 
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-3xl mb-4`}>
+                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-3xl mb-4 ${tool.textDark ? 'text-gray-800' : ''}`}>
                   {tool.icon}
                 </div>
 

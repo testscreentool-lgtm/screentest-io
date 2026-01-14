@@ -166,67 +166,6 @@ export default function MonitorTestClient() {
 
   return (
     <>
-      {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How do I test my monitor for problems?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Run comprehensive tests in this order: 1) Dead pixel test (black, white, red, green, blue solid colors), 2) Backlight bleed test (black screen in dark room), 3) Color uniformity test (solid colors at 50% brightness), 4) Text sharpness test (various font sizes), 5) Response time test for gaming monitors. Testing takes 5-10 minutes total. Use fullscreen mode, clean screen first, test at native resolution (1920x1080, 2560x1440, or 3840x2160)."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is a good monitor response time for gaming?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Modern gaming monitors should have 1-5ms response time (GTG - Gray to Gray). Competitive esports gamers prefer 0.5-1ms for minimal motion blur. Casual gaming: 5ms is acceptable. Fast-paced FPS games (CS2, Valorant, Apex): 1-2ms recommended. Racing/sports games: 2-4ms acceptable. Strategy/RPG games: 5ms+ is fine. IPS panels now achieve 1ms (Fast IPS technology), TN panels traditionally fastest at 0.5-1ms, VA panels typically 4-7ms."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Should I calibrate my monitor?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Calibrate if: you're a photographer/designer needing color accuracy, colors look washed out or oversaturated, or multiple monitors don't match. Don't calibrate if: casual user with decent factory settings, gaming-focused (response time matters more than perfect colors), or can't afford calibration device ($100-200 minimum). Basic adjustments: brightness 20-50% for office use, contrast 70-80%, gamma 2.2 (Windows standard), color temperature 6500K (D65 standard). Professional calibration requires hardware colorimeter ($100-500)."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How often should I test my monitor?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Test schedule: Immediately upon delivery (within 24 hours to use retailer return window), every 3 months for first year (warranty documentation if issues develop), every 6-12 months for ongoing use, after any physical impact or transport, when colors/brightness seem off. New monitor testing is critical - 3-7% of displays have defects, retailers accept returns within 14-30 days for any reason, manufacturer warranties after 30 days require proving defects exceed acceptable tolerances."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What refresh rate do I need for gaming?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Refresh rate recommendations by use: Casual gaming: 60-75Hz sufficient. Competitive FPS gaming: 144-165Hz minimum, 240Hz preferred. Esports professionals: 240-360Hz, some use 480Hz. Console gaming (PS5/Xbox Series X): 120Hz matches console output. Content creation: 60Hz adequate, higher unnecessary. Competitive advantage: 144Hz vs 60Hz = 9.7ms faster frame display. 240Hz vs 144Hz = 2.5ms faster. Diminishing returns above 240Hz for most players. Match GPU capability - RTX 4070+ for 1440p@165Hz, RTX 4080+ for 4K@144Hz."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I fix monitor color problems?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Common color issues and fixes: Washed out colors - increase digital vibrance/saturation 10-20%, adjust contrast to 75-80%, ensure RGB color range set to 'Full' not 'Limited'. Too bright/dark - adjust brightness: 20-30% for dark rooms, 40-50% for office, 60-80% for bright rooms. Yellow tint - set color temperature to 6500K (neutral), disable 'warm' or 'eye care' modes. Colors don't match - use same color profile across monitors, disable monitor's dynamic contrast, match brightness/contrast settings. For professional work: invest in hardware calibration tool ($100-500), recalibrate every 1-3 months, use standard sRGB or Adobe RGB color space."
-                }
-              }
-            ]
-          })
-        }}
-      />
-
       {/* Fullscreen Test Mode */}
       {isFullscreen && renderTestScreen()}
 
@@ -276,8 +215,6 @@ export default function MonitorTestClient() {
             </p>
           </div>
         </section>
-
-        {/* Continue with H2 sections following 86-instruction framework... Due to length constraints, showing the structure */}
 
         {/* H2 Section 1 */}
         <section className="mb-12">
@@ -349,8 +286,6 @@ export default function MonitorTestClient() {
             <strong>Real Testing Example:</strong> Unboxing a Dell S2721DGF (27" IPS, 165Hz, $450) from Amazon on January 8th, 2025. Testing conducted January 8th, 11 PM (monitor warm-up: 30 minutes at 50% brightness). Room completely dark. Native 2560x1440 resolution confirmed in Windows settings. Dead pixel test (5 colors, 2 minutes): Zero defects found. Backlight bleed test: Minor IPS glow in corners (viewing angle dependent - normal). Color uniformity: Slight warmth in upper-left quadrant, imperceptible in regular content. Text sharpness: Excellent, ClearType enabled. Gradient test: Minimal banding in dark grays (8-bit panel characteristic). Response time UFO test: Clean trails at 165Hz, minimal ghosting. Verdict: Excellent panel lottery win, kept. Testing time: 9 minutes total. Value: $450 investment protected.
           </p>
         </section>
-
-        {/* Additional H2 sections following same pattern with E-E-A-T, featured snippets, tables, real examples... */}
 
         {/* FAQ Section */}
         <section className="mb-12">

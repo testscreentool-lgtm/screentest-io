@@ -55,7 +55,7 @@ const schemaData = {
       "name": "What's the difference between stuck and dead pixels?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Stuck pixels display a color (red, green, blue, or white) because their transistor is stuck on. These may be fixable with software. Dead pixels appear completely black because they receive zero power—they cannot be fixed without replacing the screen. Hot pixels (always white) are a subcategory of stuck pixels where all three sub-pixels are stuck. Manufacturing data shows stuck pixels occur in roughly 0.001% of new displays."
+        "text": "Stuck pixels display a color (red, green, blue, or white) because their transistor is \"stuck on.\" These may be fixable with software. Dead pixels appear completely black because they receive zero power—they cannot be fixed without replacing the screen. Hot pixels (always white) are a subcategory of stuck pixels where all three sub-pixels are stuck. Manufacturing data shows stuck pixels occur in roughly 0.001% of new displays."
       }
     },
     {
@@ -75,17 +75,4 @@ const schemaData = {
       }
     }
   ]
-}
-
-export default function PixelFixerPage() {
-  return (
-    <>
-      <Script
-        id="pixel-fixer-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-      <PixelFixerClient />
-    </>
-  )
 }

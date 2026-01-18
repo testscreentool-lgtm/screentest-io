@@ -3,26 +3,42 @@ import Script from 'next/script'
 import DeadPixelTestClient from './DeadPixelTestClient'
 
 export const metadata: Metadata = {
-  title: 'Dead Pixel Test: Free Instant Detection | ISO 13406-2 Compliant',
-  description: 'Free dead pixel test for all screens. Detect defects in 2 minutes for new purchases, warranty claims, and used device inspections. ISO 13406-2 compliant testing.',
-  keywords: 'dead pixel test, stuck pixel test, pixel test, monitor test, screen test, dead pixel checker, LCD test, ISO 13406-2, pixel defect test',
+  title: 'Dead Pixel Test – Free Online Screen Checker | ScreenTest',
+  description:
+    'Run a free dead pixel test online. Detect dead or stuck pixels on monitors, phones, laptops, and TVs in 2 minutes. No download. ISO 13406-2 compliant.',
+  keywords:
+    'dead pixel test, stuck pixel test, pixel test, monitor test, screen test, dead pixel checker, LCD test, ISO 13406-2, pixel defect test',
   openGraph: {
-    title: 'Dead Pixel Test: Free Instant Detection | ISO 13406-2 Compliant',
-    description: 'Free 2-minute dead pixel test. Essential for new purchases and warranty claims. Test before your 14-30 day return window closes.',
+    title: 'Dead Pixel Test – Free Online Screen Checker | ScreenTest',
+    description:
+      'Run a free dead pixel test online. Detect dead or stuck pixels on any screen in 2 minutes. No download required.',
     type: 'website',
     url: 'https://screentest.io/dead-pixel-test',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dead Pixel Test: Free Instant Detection | ISO 13406-2 Compliant',
-    description: 'Free 2-minute dead pixel test. Essential for new purchases and warranty claims.',
+    title: 'Dead Pixel Test – Free Online Screen Checker | ScreenTest',
+    description:
+      'Run a free dead pixel test online. Detect dead or stuck pixels on any screen in 2 minutes.',
   },
   alternates: {
     canonical: 'https://screentest.io/dead-pixel-test',
   },
 }
 
-const schemaData = {
+// WebApplication Schema (Tool Identification)
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Dead Pixel Test",
+  "url": "https://screentest.io/dead-pixel-test",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "description": "Free online dead pixel test to detect dead and stuck pixels on any screen."
+}
+
+// FAQ Schema (Your original content unchanged)
+const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -80,11 +96,20 @@ const schemaData = {
 export default function DeadPixelTestPage() {
   return (
     <>
+      {/* WebApplication Schema */}
       <Script
-        id="dead-pixel-test-schema"
+        id="dead-pixel-webapp-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
+
+      {/* FAQ Schema */}
+      <Script
+        id="dead-pixel-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <DeadPixelTestClient />
     </>
   )

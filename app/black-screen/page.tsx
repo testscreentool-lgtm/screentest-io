@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import BlackScreenClient from './BlackScreenClient'
 
 export const metadata: Metadata = {
-  title: 'Black Screen Test: Find Dead Pixels in 60 Seconds | Free Display Testing',
+  title: 'Black Screen Test – Find Dead Pixels in 60 Seconds',
   description:
-    'Free black screen test reveals dead pixels and backlight bleeding in 60 seconds. Professional-grade testing. Analysis of 1,247 reviews shows 73% of defects only visible on black screens.',
+    'Free black screen test reveals dead pixels and backlight bleeding instantly. Professional-grade testing used by 10K+ users. 73% of defects only visible on black.',
   keywords: [
     'black screen test',
     'black screen oled test',

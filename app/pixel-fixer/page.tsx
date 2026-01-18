@@ -1,28 +1,30 @@
-import { Metadata } from 'next'
-import Script from 'next/script'
-import PixelFixerClient from './PixelFixerClient'
+import type { Metadata } from "next"
+import Script from "next/script"
+import PixelFixerClient from "./PixelFixerClient"
 
 export const metadata: Metadata = {
-  title: 'Pixel Fixer: Fix Stuck Pixels Free | 20-60% Success Rate 2025 | ScreenTest',
-  description: 'Free browser-based pixel fixer tool. Research shows 20-60% success rate for stuck pixels. Works on LCD, OLED, and all screens. No download required.',
-  keywords: 'pixel fixer, stuck pixel fix, dead pixel repair, screen pixel fixer, fix stuck pixel, jscreenfix alternative, stuck pixel repair tool',
+  title: "Pixel Fixer Tool: Fix Stuck Pixels Online | Free Tool",
+  description:
+    "Free browser-based stuck pixel repair tool. Research shows 20-60% success rate. Try it before spending money on screen replacement.",
+  alternates: {
+    canonical: "https://screentest.io/pixel-fixer",
+  },
   openGraph: {
-    title: 'Pixel Fixer: Fix Stuck Pixels | 20-60% Success Rate',
-    description: 'Free pixel fixer tool with proven 20-60% success rate. Color-cycling method repairs stuck pixels on all screen types.',
-    type: 'website',
-    url: 'https://screentest.io/pixel-fixer',
+    title: "Pixel Fixer Tool: Fix Stuck Pixels Online",
+    description:
+      "Free browser-based stuck pixel repair tool with 20-60% success rate.",
+    url: "https://screentest.io/pixel-fixer",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Pixel Fixer: Fix Stuck Pixels | 20-60% Success Rate',
-    description: 'Free browser tool fixes stuck pixels. Research-backed 20-60% success rate. Works on LCD, OLED, all screens.',
-  },
-  alternates: {
-    canonical: 'https://screentest.io/pixel-fixer',
+    card: "summary_large_image",
+    title: "Pixel Fixer Tool: Fix Stuck Pixels Online",
+    description:
+      "Free stuck pixel fixer tool. Try before replacing your screen.",
   },
 }
 
-const schemaData = {
+const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -75,4 +77,20 @@ const schemaData = {
       }
     }
   ]
+}
+
+export default function PixelFixerPage() {
+  return (
+    <>
+      {/* FAQ Schema */}
+      <Script
+        id="pixel-fixer-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Page UI */}
+      <PixelFixerClient />
+    </>
+  )
 }

@@ -1,27 +1,4 @@
-import type { Metadata } from 'next'
-import Script from 'next/script'
-import ResponseTimeTestClient from './ResponseTimeTestClient'
-
-export const metadata: Metadata = {
-  title: 'Response Time Test: Monitor Ghosting & Motion Blur | ScreenTest',
-  description: 'Free response time test using UFO motion method. Detect ghosting and optimize monitor overdrive.',
-  alternates: {
-    canonical: 'https://screentest.io/response-time-test',
-  },
-  openGraph: {
-    title: 'Response Time Test | ScreenTest',
-    description: 'Test monitor response time and ghosting using UFO method.',
-    url: 'https://screentest.io/response-time-test',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Response Time Test | ScreenTest',
-    description: 'Free UFO response time and ghosting test.',
-  },
-}
-
-const faqSchema = {
+const schemaData = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -30,7 +7,7 @@ const faqSchema = {
       "name": "What is monitor response time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Response time measures how fast pixels change color. Faster response reduces ghosting."
+        "text": "Response time is how fast a pixel changes color. Faster response reduces motion blur."
       }
     },
     {
@@ -38,21 +15,32 @@ const faqSchema = {
       "name": "How do I test response time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use the UFO motion test and look for trailing blur behind moving objects."
+        "text": "Use a UFO motion test and look for trailing shadows behind moving objects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good response time for gaming?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For gaming, under 5ms GTG is good. Competitive players prefer 1 to 2ms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is monitor ghosting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ghosting is a shadow trail behind moving objects caused by slow pixels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is overdrive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Overdrive speeds up pixel transitions to reduce blur."
       }
     }
   ]
-}
-
-export default function ResponseTimeTestPage() {
-  return (
-    <>
-      <Script
-        id="response-time-faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <ResponseTimeTestClient />
-    </>
-  )
 }

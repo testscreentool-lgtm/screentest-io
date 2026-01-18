@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ScreenTest - Free Professional Display Testing Tools',
-  description: 'Complete suite of 12 free display testing tools. Test for dead pixels, backlight bleeding, color accuracy, brightness uniformity, and more. Instant testing, no signup required.',
+  title: 'Screen Test - 12 Free Display Testing Tools | ScreenTest',
+  description: 'Test monitors, phones & TVs with 12 professional tools including black screen, white screen & dead pixel tests. Find display defects instantly—free, no download.',
 }
 
 export default function HomePage() {

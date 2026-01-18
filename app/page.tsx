@@ -111,7 +111,7 @@ export default function HomePage() {
             Professional Display Testing Tools
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-blue-100">
-            Complete suite of 12 free tools to test monitors, laptops, phones, and TVs
+            Complete suite of 12 free tools to test monitors, laptops, phones, and TVs for dead pixels, color accuracy, and display defects
           </p>
           <div className="flex items-center justify-center gap-8 text-lg">
             <span className="flex items-center gap-2">

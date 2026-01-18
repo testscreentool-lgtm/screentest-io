@@ -135,26 +135,6 @@ const websiteSchema = {
   },
 }
 
-const softwareApplicationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'ScreenTest',
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Web Browser',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    ratingCount: '1250',
-  },
-  description:
-    'Professional display testing suite with free online tools for monitors, TVs, and mobile devices.',
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -176,12 +156,8 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(softwareApplicationSchema),
+            __html: JSON.stringify(websiteSchema),
           }}
         />
       </head>

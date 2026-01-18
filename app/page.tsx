@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Screen Test - 12 Free Display Testing Tools | ScreenTest',
-  description: 'Test monitors, phones & TVs with 12 professional tools including black screen, white screen & dead pixel tests. Find display defects instantly—free, no download.',
+  description: 'Test monitors, phones & TVs with 12 professional tools including black screen, white screen & dead pixel tests. Find display defects instantly-free, no download.',
 }
 
 export default function HomePage() {

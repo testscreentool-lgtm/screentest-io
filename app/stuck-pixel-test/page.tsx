@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
-import DeadPixelTestClient from '../dead-pixel-test/DeadPixelTestClient'
+import PixelFixerClient from '../pixel-fixer/PixelFixerClient'
 
 export const metadata: Metadata = {
   title: 'Stuck Pixel Test: Check for Stuck Pixels Online | Free Tool',
@@ -73,7 +73,7 @@ export default function StuckPixelTestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <DeadPixelTestClient />
+      <PixelFixerClient />
     </>
   )
 }

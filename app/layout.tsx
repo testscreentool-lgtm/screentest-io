@@ -1,5 +1,5 @@
 // File: /app/layout.tsx
-// Root layout with navigation menu, SEO, and Poppins + Inter fonts
+// Root layout with navigation menu, SEO, Fonts, and Correct Schema
 
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
@@ -64,13 +64,13 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://screentest.io',
+    canonical: 'https://screentest.io/',
   },
 
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://screentest.io',
+    url: 'https://screentest.io/',
     siteName: 'ScreenTest',
     title: 'ScreenTest - Free Professional Display Testing Tools',
     description:
@@ -96,43 +96,40 @@ export const metadata: Metadata = {
 }
 
 // ------------------
-// Schema.org data
+// Correct Schema.org Graph
 // ------------------
 
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'ScreenTest',
-  url: 'https://screentest.io',
-  logo: 'https://screentest.io/favicon.svg',
-  description:
-    'Professional display testing tools for monitors, TVs, and mobile devices.',
-  sameAs: [
-    'https://twitter.com/screentest',
-    'https://github.com/screentest',
-  ],
-}
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'ScreenTest',
-  url: 'https://screentest.io',
-  description:
-    'Free online tools to test dead pixels, calibrate monitors, and optimize display quality.',
-  publisher: {
-    '@type': 'Organization',
-    name: 'ScreenTest',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://screentest.io/favicon.svg',
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://screentest.io/#organization",
+      name: "ScreenTest",
+      url: "https://screentest.io/",
+      logo: "https://screentest.io/favicon.svg",
+      description:
+        "Professional display testing tools for monitors, TVs, and mobile devices.",
+      sameAs: [
+        "https://twitter.com/screentest",
+        "https://github.com/screentest",
+      ],
     },
-  },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://screentest.io/?s={search_term_string}',
-    'query-input': 'required name=search_term_string',
-  },
+    {
+      "@type": "WebSite",
+      "@id": "https://screentest.io/#website",
+      url: "https://screentest.io/",
+      name: "ScreenTest",
+      publisher: {
+        "@id": "https://screentest.io/#organization",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://screentest.io/?s={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -147,20 +144,15 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-        {/* Schema.org structured data */}
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
+            __html: JSON.stringify(schemaGraph),
           }}
         />
       </head>
+
       <body className={`min-h-screen bg-gray-50 ${inter.className}`}>
         <ToolsMenu />
         <main>{children}</main>

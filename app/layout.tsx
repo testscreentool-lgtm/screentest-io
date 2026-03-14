@@ -26,6 +26,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://screentest.io'),
 
+  // ✅ Google Search Console verification (correct method)
+  verification: {
+    google: 'NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g',
+  },
+
   title: {
     default: 'ScreenTest - Free Professional Display Testing Tools',
     template: '%s | ScreenTest',
@@ -143,12 +148,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-        {/* Google Search Console Verification */}
-        <meta
-          name="google-site-verification"
-          content="NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g"
-        />
 
         {/* Structured Data */}
         <script

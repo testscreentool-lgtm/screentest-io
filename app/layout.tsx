@@ -144,6 +144,12 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+        {/* Google Search Console Verification */}
+        <meta
+          name="google-site-verification"
+          content="NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g"
+        />
+
         {/* Structured Data */}
         <script
           type="application/ld+json"

@@ -1,0 +1,159 @@
+// File: /app/layout.tsx
+// Root layout with navigation menu, SEO, Fonts, and Correct Schema
+
+import type { Metadata } from 'next'
+import { Poppins, Inter } from 'next/font/google'
+import './globals.css'
+import ToolsMenu from '@/components/ToolsMenu'
+import Footer from '@/components/Footer'
+
+// Primary font: Poppins for headings
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
+
+// Secondary font: Inter for body text
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://screentest.io'),
+
+  // Google Search Console verification
+  verification: {
+    google: 'NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g',
+  },
+
+  title: {
+    default: 'ScreenTest - Free Professional Display Testing Tools',
+    template: '%s | ScreenTest',
+  },
+
+  description:
+    'Professional display testing suite with free online tools. Test for dead pixels, backlight bleeding, color accuracy, brightness, and more.',
+
+  keywords: [
+    'screen test',
+    'dead pixel test',
+    'monitor test',
+    'display test',
+    'pixel checker',
+    'black screen test',
+    'white screen test',
+    'screen calibration',
+    'monitor calibration',
+    'display testing tools',
+  ],
+
+  authors: [{ name: 'ScreenTest' }],
+  creator: 'ScreenTest',
+  publisher: 'ScreenTest',
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  alternates: {
+    canonical: 'https://screentest.io/',
+  },
+
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://screentest.io/',
+    siteName: 'ScreenTest',
+    title: 'ScreenTest - Free Professional Display Testing Tools',
+    description:
+      'Professional display testing suite with free tools. Test for dead pixels, backlight bleeding, and more.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'ScreenTest - Display Testing Tools',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ScreenTest - Display Testing Tools',
+    description:
+      'Free online tools for professional display testing. Test dead pixels, calibrate monitors, and optimize screen quality.',
+    images: ['/og-image.png'],
+  },
+}
+
+// ------------------
+// Correct Schema.org Graph
+// P0 FIX: Removed fake sameAs social links, removed non-functional SearchAction
+// ------------------
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://screentest.io/#organization",
+      name: "ScreenTest",
+      url: "https://screentest.io/",
+      logo: "https://screentest.io/favicon.svg",
+      description:
+        "Professional display testing tools for monitors, TVs, and mobile devices.",
+      // sameAs removed: no verified social profiles exist yet
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://screentest.io/#website",
+      url: "https://screentest.io/",
+      name: "ScreenTest",
+      publisher: {
+        "@id": "https://screentest.io/#organization",
+      },
+      // SearchAction removed: site has no search functionality at /?s=
+    },
+  ],
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaGraph),
+          }}
+        />
+      </head>
+
+      <body className={`min-h-screen bg-gray-50 ${inter.className}`}>
+        <ToolsMenu />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  )
+}

@@ -2,8 +2,9 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import MonitorTestClient from './MonitorTestClient'
 
+// P2 FIX: Removed "2025" from title
 export const metadata: Metadata = {
-  title: 'Monitor Test: Complete 8-in-1 Display Testing Suite 2025 | ScreenTest',
+  title: 'Monitor Test: Complete 8-in-1 Display Testing Suite | ScreenTest',
   description: 'Free comprehensive monitor test suite. 8 professional tests in one tool: dead pixels, backlight bleed, colors, gradients, text clarity, response time, and more.',
   keywords: 'monitor test, screen test, display test, monitor quality test, comprehensive monitor test, LCD test, monitor calibration test, display quality, screen defects',
   openGraph: {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     description: 'Professional monitor testing suite with 8 comprehensive tests. Test dead pixels, backlight bleed, colors, and more in minutes.',
     type: 'website',
     url: 'https://screentest.io/monitor-test',
+    siteName: 'ScreenTest',
   },
   twitter: {
     card: 'summary_large_image',
@@ -77,7 +79,6 @@ const schemaData = {
   ]
 }
 
-// ADD THIS - DEFAULT EXPORT:
 export default function MonitorTestPage() {
   return (
     <>

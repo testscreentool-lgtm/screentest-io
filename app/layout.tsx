@@ -26,7 +26,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://screentest.io'),
 
-  // ✅ Google Search Console verification (correct method)
+  // Google Search Console verification
   verification: {
     google: 'NVLBiVsRjspMpvEPLdNlULVN_Ff-cn9vjvp8BlQLV0g',
   },
@@ -96,12 +96,12 @@ export const metadata: Metadata = {
     description:
       'Free online tools for professional display testing. Test dead pixels, calibrate monitors, and optimize screen quality.',
     images: ['/og-image.png'],
-    creator: '@screentest',
   },
 }
 
 // ------------------
 // Correct Schema.org Graph
+// P0 FIX: Removed fake sameAs social links, removed non-functional SearchAction
 // ------------------
 
 const schemaGraph = {
@@ -115,10 +115,7 @@ const schemaGraph = {
       logo: "https://screentest.io/favicon.svg",
       description:
         "Professional display testing tools for monitors, TVs, and mobile devices.",
-      sameAs: [
-        "https://twitter.com/screentest",
-        "https://github.com/screentest",
-      ],
+      // sameAs removed: no verified social profiles exist yet
     },
     {
       "@type": "WebSite",
@@ -128,11 +125,7 @@ const schemaGraph = {
       publisher: {
         "@id": "https://screentest.io/#organization",
       },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://screentest.io/?s={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
+      // SearchAction removed: site has no search functionality at /?s=
     },
   ],
 }
@@ -145,9 +138,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         {/* Structured Data */}
         <script

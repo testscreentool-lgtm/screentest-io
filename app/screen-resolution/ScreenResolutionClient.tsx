@@ -21,40 +21,9 @@ export default function ScreenResolutionClient() {
     setDpi(calculatedDpi)
   }, [])
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a good screen resolution?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "1920x1080 (Full HD) is standard for 24-inch monitors, 2560x1440 (QHD) ideal for 27-inch, 3840x2160 (4K) for 32-inch+. Higher resolutions provide sharper text and more screen space. Consider pixel density (PPI): aim for 90-110 PPI for general use, 140+ PPI for design work."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I check my screen resolution?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Check resolution in Display Settings (Windows: Settings > System > Display) or System Preferences (Mac: Apple Menu > System Preferences > Displays). Browser-based tests detect physical pixel count including Retina/HiDPI scaling."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between resolution and screen size?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Resolution is pixel count (1920x1080). Screen size is physical dimensions (24 inches diagonal). Same resolution on different sizes creates different pixel density (PPI). 1080p on 24-inch = sharp, 1080p on 32-inch = pixelated."
-        }
-      }
-    ]
-  }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       <div className="min-h-screen bg-gray-50">
         <article className="max-w-4xl mx-auto px-4 py-8">

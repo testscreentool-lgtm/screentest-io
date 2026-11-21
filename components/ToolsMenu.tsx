@@ -1,5 +1,6 @@
 // File: /components/ToolsMenu.tsx
-// Navigation menu with all 12 display testing tools
+// Navigation menu with all 13 display testing tools
+// P1 FIX: Added stuck-pixel-test to tools list, removed dead guide links
 
 'use client'
 
@@ -10,6 +11,7 @@ const tools = [
   { name: 'Black Screen', href: '/black-screen', icon: '⬛' },
   { name: 'White Screen', href: '/white-screen', icon: '⬜' },
   { name: 'Dead Pixel Test', href: '/dead-pixel-test', icon: '🔍' },
+  { name: 'Stuck Pixel Test', href: '/stuck-pixel-test', icon: '📌' }, // P1 FIX: Added
   { name: 'Pixel Fixer', href: '/pixel-fixer', icon: '🔧' },
   { name: 'Color Test', href: '/color-test', icon: '🎨' },
   { name: 'Brightness Test', href: '/brightness-test', icon: '☀️' },
@@ -21,11 +23,8 @@ const tools = [
   { name: 'Screen Resolution', href: '/screen-resolution', icon: '📐' },
 ]
 
+// P1 FIX: Removed dead guide links, only link to the guides hub
 const guides = [
-  { name: 'Display Buying Guide', href: '/guides/display-buying-guide', icon: '🛒' },
-  { name: 'Dead Pixel Guide', href: '/guides/dead-pixel-guide', icon: '📖' },
-  { name: 'Monitor Calibration', href: '/guides/monitor-calibration', icon: '⚙️' },
-  { name: 'Gaming Monitor Guide', href: '/guides/gaming-monitor-guide', icon: '🎮' },
   { name: 'All Guides', href: '/guides', icon: '📚' },
 ]
 
@@ -99,32 +98,10 @@ export default function ToolsMenu() {
               </div>
             </div>
 
-            {/* Guides Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-colors">
-                Guides
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-2">
-                  {guides.map((guide) => (
-                    <Link
-                      key={guide.href}
-                      href={guide.href}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 transition group/item"
-                    >
-                      <span className="text-2xl">{guide.icon}</span>
-                      <span className="text-gray-700 group-hover/item:text-gray-900 font-medium">
-                        {guide.name}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+            {/* Guides Link */}
+            <Link href="/guides" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Guides
+            </Link>
 
             {/* About */}
             <Link href="/about" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
@@ -138,7 +115,7 @@ export default function ToolsMenu() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
@@ -157,14 +134,14 @@ export default function ToolsMenu() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="space-y-2">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
-              
+
               <div className="px-4 py-2 text-sm font-semibold text-gray-500">Display Tools</div>
               {tools.map((tool) => (
                 <Link
@@ -177,30 +154,24 @@ export default function ToolsMenu() {
                   <span className="text-gray-700 font-medium">{tool.name}</span>
                 </Link>
               ))}
-              
-              <div className="px-4 py-2 text-sm font-semibold text-gray-500 mt-4">Guides</div>
-              {guides.map((guide) => (
+
+              <div className="border-t border-gray-200 mt-4 pt-4">
                 <Link
-                  key={guide.href}
-                  href={guide.href}
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50"
+                  href="/guides"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="text-xl">{guide.icon}</span>
-                  <span className="text-gray-700 font-medium">{guide.name}</span>
+                  Guides
                 </Link>
-              ))}
-              
-              <div className="border-t border-gray-200 mt-4 pt-4">
-                <Link 
-                  href="/about" 
+                <Link
+                  href="/about"
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About
                 </Link>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >

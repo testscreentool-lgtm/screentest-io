@@ -44,40 +44,9 @@ export default function BurnInPreventionClient() {
     }
   }
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What causes OLED burn-in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OLED burn-in occurs when static images display for extended periods (2000+ hours), causing uneven pixel wear. Bright UI elements like taskbars, logos, or HUDs degrade faster than surrounding pixels. Risk increases with screen brightness above 80% and static content over 4 hours daily."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take for OLED burn-in to occur?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OLED burn-in typically requires 2000-5000 hours of displaying static content at high brightness (80%+). With normal varied usage, modern OLEDs last 5-10 years without noticeable burn-in. Displaying static taskbars 8 hours daily may show burn-in within 12-24 months."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can OLED burn-in be prevented?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Keep brightness at 60% or lower for static content, enable pixel shift features, hide taskbars when not needed, use dark mode, run screensavers after 5-10 minutes idle, vary displayed content frequently. These methods extend OLED lifespan by 3-5x."
-        }
-      }
-    ]
-  }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       <div className="min-h-screen bg-gray-50">
         {isRunning && (
